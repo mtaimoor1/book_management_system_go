@@ -36,7 +36,7 @@ func GetBookById(w http.ResponseWriter, r *http.Request) {
 }
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
-	book := models.Book{}
+	book := &models.Book{}
 	utils.ParseBody(r, book)
 	b := book.CreateBook()
 	res, _ := json.Marshal(b)
